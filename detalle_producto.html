@@ -11,10 +11,38 @@
 </head>
 <body background="image/background.png" leftmargin="150" rightmargin="150" topmargin="40">
     
-    <header>
-        <h1>¿Para que sirve el Producto?</h1>
-    </header>
+<table width="100%">
+    <tr>
 
+    <td width="150">
+        <img src="image/PURAVIDA1.png" width="100">
+    </td>
+    <td width="">
+        <input type="text" placeholder="Buscar un producto...">
+        <button>Buscar</button>
+    </td>
+        <td>
+            <td align="center" width="60"><a href="index.html">INICIO</a></td>
+            <td align="center" width="60"><a href="blog.html">BLOG</a></td>
+            <td align="center" width="110"><a href="detalle_producto.html">PRODUCTOS</a></td>
+            <td align="center" width="110"><a href="#">NOSOTROS</a></td>
+            <td align="center" width="110"><a href="#">MIS PEDIDOS</a></td>
+            <td align="center" width="110"><a href="#">MI CUENTA</a></td>
+        </td>
+    </tr>
+
+</table>
+
+    <header>
+        <h1>PRODUCTOS</h1>
+    </header>
+        <select  onchange="location.href=this.value">
+            <option value="">Seleccionar categoría</option>
+            <option value="#apronax">Vitaminas</option>
+            <option value="#ferrimax">Medicamentos</option>
+            <option value="#ferrimax">Suplementos</option>
+            <option value="#ferrimax">Higiene</option>
+        </select>
     <section id="ibuprofeno">
         <h2>Ibuprofeno:</h2>
         <img width="200" src="image/IBUPROFENO.jpg" />
