@@ -1,0 +1,42 @@
+/**.banner_micuenta {
+    grid-area: imageBlock;
+    height: 600px;
+    position: relative;
+}**/
+
+.contenedor {
+  display: flex;
+  align-items: center;
+
+}
+
+.imagen img {
+  width: 900px; 
+  margin-right: 40px;
+}
+
+.logo {
+  width: 100px; 
+
+}
+
+.formulario input,
+.formulario select{
+    width: 100%;        
+  padding: 10px;      
+  font-size: 20px;    
+  border-radius: 8px; 
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+.formulario button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #3aa76d; /* verde farmacia */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
