@@ -23,7 +23,7 @@
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background-color: var(--gris);
   color: var(--texto);
 }
@@ -66,8 +66,7 @@ header {
   padding: 10px 16px;
   border: 1.5px solid var(--borde);
   border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
+  font-family: 'Nunito', sans-serif;
   outline: none;
   transition: border-color 0.2s;
 }
@@ -82,7 +81,7 @@ header {
   color: var(--blanco);
   border: none;
   border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
@@ -228,8 +227,9 @@ nav a:hover {
 }
 
 .section-titulo {
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 2rem;
+  font-weight: 800;
   color: var(--verde);
   text-align: center;
   margin-bottom: 28px;
@@ -292,7 +292,8 @@ nav a:hover {
 }
 
 .producto-card h3 {
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
   font-size: 1rem;
   color: var(--texto);
 }
@@ -340,17 +341,185 @@ nav a:hover {
 }
 
 /* ══════════════════════════
+   CARRITO
+══════════════════════════ */
+.carrito {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--verde);
+  font-weight: 700;
+  font-size: 0.9rem;
+  background-color: var(--verde-suave);
+  padding: 8px 14px;
+  border-radius: 8px;
+  position: relative;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.carrito:hover {
+  background-color: var(--verde);
+  color: var(--blanco);
+}
+
+.carrito-badge {
+  background-color: var(--acento);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+}
+
+/* ══════════════════════════
    FOOTER
 ══════════════════════════ */
 footer {
   background-color: var(--verde);
   color: var(--blanco);
+  margin-top: 40px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+  color: var(--acento);
+}
+
+.footer-col a {
+  display: block;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.88rem;
+  line-height: 2;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: var(--blanco);
+}
+
+.footer-telefono {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 10px;
+  line-height: 1.8;
+}
+
+.footer-redes {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.red-social {
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.red-social:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.footer-pagos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.pago-badge {
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.pago-badge.visa       { background-color: #1a1f71; color: white; }
+.pago-badge.mastercard { background-color: #eb001b; color: white; }
+.pago-badge.amex       { background-color: #2e77bc; color: white; }
+.pago-badge.efectivo   { background-color: #52b788; color: white; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
   text-align: center;
-  padding: 24px;
-  font-size: 0.85rem;
+  padding: 16px 24px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.6);
 }
 
 footer a {
   color: var(--verde-suave);
   text-decoration: none;
+}
+/* CONTENEDOR */
+.menu-item {
+  position: relative;
+}
+
+/* OCULTO POR DEFECTO */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 260px;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  display: none;
+
+  /* sombra tipo Inkafarma */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  /* scroll si hay muchas opciones */
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* LINKS */
+.dropdown a {
+  display: block;
+  padding: 8px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown a:hover {
+  color: #00a650;
+}
+
+/* mostrar al pasar el mouse */
+.menu-item:hover .dropdown {
+  display: block;
+}
+.menu-item {
+  list-style: none;
 }

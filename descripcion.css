@@ -1,0 +1,446 @@
+/* ── VARIABLES GLOBALES ── */
+:root {
+  --verde: #2d6a4f;
+  --verde-claro: #52b788;
+  --verde-suave: #d8f3dc;
+  --acento: #f4a261;
+  --texto: #1b1b1b;
+  --gris: #f7f7f5;
+  --blanco: #ffffff;
+  --borde: #e0e0d8;
+  --sombra: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ── RESET ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--gris);
+  color: var(--texto);
+}
+
+/* ══════════════════════════
+   HEADER
+══════════════════════════ */
+header {
+  background-color: var(--blanco);
+  border-bottom: 2px solid var(--verde-suave);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--sombra);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo img {
+  width: 90px;
+  display: block;
+}
+
+/* ── Buscador ── */
+.search-bar {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1.5px solid var(--borde);
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: var(--verde-claro);
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: var(--verde);
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-bar button:hover {
+  background-color: var(--verde-claro);
+}
+
+/* ══════════════════════════
+   NAVEGACIÓN
+══════════════════════════ */
+nav {
+  background-color: var(--verde);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+}
+
+nav a {
+  display: block;
+  color: var(--blanco);
+  text-decoration: none;
+  padding: 13px 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: var(--acento);
+  transition: width 0.25s;
+}
+
+nav a:hover::after,
+nav a.activo::after {
+  width: 70%;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+/* CONTENEDOR */
+.menu-item {
+  position: relative;
+}
+
+/* OCULTO POR DEFECTO */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 260px;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  display: none;
+
+  /* sombra tipo Inkafarma */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  /* scroll si hay muchas opciones */
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* LINKS */
+.dropdown a {
+  display: block;
+  padding: 8px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown a:hover {
+  color: #00a650;
+}
+
+/* mostrar al pasar el mouse */
+.menu-item:hover .dropdown {
+  display: block;
+}
+.menu-item {
+  list-style: none;
+}
+
+/* ══════════════════════════
+   CARRITO
+══════════════════════════ */
+.carrito {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--verde);
+  font-weight: 700;
+  font-size: 0.9rem;
+  background-color: var(--verde-suave);
+  padding: 8px 14px;
+  border-radius: 8px;
+  position: relative;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.carrito:hover {
+  background-color: var(--verde);
+  color: var(--blanco);
+}
+
+.carrito-badge {
+  background-color: var(--acento);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+}
+
+
+/* Estilos generales para que se vea ordenado */
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--gris);
+  color: var(--texto);
+}
+
+#contenedor-producto {
+    background-color: white;
+    max-width: 900px;
+    margin: 20px auto;
+    display: flex; /* Para poner imagen a un lado y texto al otro */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+}
+
+.columna-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#foto-principal {
+    width: 90%;
+}
+
+.columna-detalles {
+    flex: 1;
+}
+
+/* Tipografía y colores */
+.codigo-producto {
+    font-size: 12px;
+    color: gray;
+}
+
+.nombre-producto {
+    font-size: 24px;
+    margin-top: 5px;
+}
+
+.precio-tachado {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.oferta {
+    color: #333;
+    font-size: 18px;
+}
+
+.texto-descripcion {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.enlace-mas {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Diseño de los botones de presentación */
+.botones-presentacion {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.opcion-elegida, .opcion-normal {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.opcion-elegida {
+    border-color: #007bff;
+    background-color: #f0f7ff;
+}
+
+/* Estilo de los métodos de envío */
+.metodos {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.item-envio {
+    font-size: 13px;
+    background-color: #f9f9f9;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.item-envio span {
+    display: block;
+    color: green;
+    font-weight: bold;
+}
+
+/* Botones de acción */
+.botones-compra {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.boton-agregar {
+    background-color: #14a05c;
+    color: white;
+    text-decoration: none; /* Quitamos el subrayado de enlace */
+    display: flex;         /* Para centrar el texto fácilmente */
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    flex: 1;
+    text-align: center;
+}
+
+
+
+/* ══════════════════════════
+   FOOTER
+══════════════════════════ */
+footer {
+  background-color: var(--verde);
+  color: var(--blanco);
+  margin-top: 40px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+  color: var(--acento);
+}
+
+.footer-col a {
+  display: block;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.88rem;
+  line-height: 2;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: var(--blanco);
+}
+
+.footer-telefono {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 10px;
+  line-height: 1.8;
+}
+
+.footer-redes {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.red-social {
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.red-social:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.footer-pagos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.pago-badge {
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.pago-badge.visa       { background-color: #1a1f71; color: white; }
+.pago-badge.mastercard { background-color: #eb001b; color: white; }
+.pago-badge.amex       { background-color: #2e77bc; color: white; }
+.pago-badge.efectivo   { background-color: #52b788; color: white; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+  padding: 16px 24px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.6);
+}
+
+footer a {
+  color: var(--verde-suave);
+  text-decoration: none;
+}

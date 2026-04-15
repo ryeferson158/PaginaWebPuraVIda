@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Carrito - Proyecto IT</title>
+    <link rel="stylesheet" href="carrito.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+      <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="image/PURAVIDA1.png" alt="PuraVida Logo">
+      </a>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar un producto...">
+        <button>Buscar</button>
+      </div>
+      <a class="carrito" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6h13M7 13L5.4 5M10 21a1 1 0 100-2 1 1 0 000 2zm7 0a1 1 0 100-2 1 1 0 000 2z"/>
+        </svg>
+        <span>Carrito</span>
+        <span class="carrito-badge">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="activo">Inicio</a>
+        <li class="menu-item">
+          <a href="detalle_producto.html">Productos</a>
+
+          <div class="dropdown">
+            <a href="#">Ahorra con Nuestros Cupones</a>
+            <a href="#">Los Descuentos sí se Sienten</a>
+            <a href="#">Pack del Ahorro</a>
+            <a href="#">Beauty & Care</a>
+            <a href="#">Cuidado Personal</a>
+            <a href="#">Adulto Mayor</a>
+            <a href="#">Wellness</a>
+            <a href="#">Cuidado del Bebé</a>
+          </div>
+        </li>
+      <a href="blog.html">Blog</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="pedidos.html">Pedidos</a>
+      <a href="mi_cuenta.html">Mi Cuenta</a>
+    </div>
+  </nav>
+
+
+    <main id="seccion-carrito">
+        
+        <section id="lista-productos">
+            <h2 class="titulo-farmacia">PuraVida (1)</h2>
+            
+            <div class="encabezado-tabla">
+                <span>PRODUCTOS</span>
+                <span>PRESENTACIÓN</span>
+                <span>CANTIDAD</span>
+                <span>SUB TOTAL</span>
+            </div>
+
+            <div class="tarjeta-producto">
+                <div class="col-producto">
+                    <img class="imagen" src="image/eterogermina.jpg" alt="Medicina">
+                    <div class="detalles-item">
+                        <p class="nombre">Enterogermina Suspensión Oral</p>
+                        <p class="sku">FRASCO BEBIBLE 1 UN</p>
+                    </div>
+                </div>
+
+                <div class="col-presentacion">
+                    <select class="selector">
+                        <option>Frasco bebible</option>
+                        <option>Caja</option>
+                    </select>
+                </div>
+
+                <div class="col-cantidad">
+                    <div class="control-numero">
+                        <button class="boton-menos">🗑️</button>
+                        <span class="valor">1</span>
+                        <button class="boton-mas">➕</button>
+                    </div>
+                </div>
+
+                <div class="col-subtotal">
+                    <span class="precio-actual">S/ 3.56</span>
+                    <span class="precio-viejo">S/ 3.60</span>
+                    <button class="boton-quitar">Eliminar</button>
+                </div>
+            </div>
+        </section>
+
+        <aside id="resumen-pago">
+            <h3>Resumen de compra</h3>
+            <div class="fila-resumen">
+                <span>Subtotal</span>
+                <span>S/ 3.56</span>
+            </div>
+            <hr>
+            <div class="fila-resumen total">
+                <span>Total a pagar</span>
+                <span>S/ 3.56</span>
+            </div>
+            <button id="boton-comprar">Ir a comprar</button>
+        </aside>
+
+    </main>
+
+          <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-col">
+        <h4>Sobre PuraVida</h4>
+        <a href="#">Catálogo del mes</a>
+        <a href="#">Boticas 24 horas</a>
+        <a href="#">Farmacia Vecina</a>
+        <a href="#">Apoyo al Paciente</a>
+        <a href="#">Productos Equivalentes</a>
+        <a href="#">Trabaja con nosotros</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>PuraVida Digital</h4>
+        <a href="blog.html">Blog PuraVida</a>
+        <a href="#">Retiro en Tienda</a>
+        <a href="#">Zonas de cobertura</a>
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Políticas de privacidad</a>
+        <a href="#">Comprobante electrónico</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contáctanos</h4>
+        <a href="#">Preguntas Frecuentes</a>
+        <a href="#">Información Médica</a>
+        <a href="#">Libro de Reclamaciones</a>
+        <p class="footer-telefono">📞 Teléfono (Lima)<br><strong>(511) 314 2020</strong></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Síguenos</h4>
+        <div class="footer-redes">
+          <a href="#" class="red-social">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="red-social">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="white" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+          </a>
+        </div>
+
+        <h4 style="margin-top:18px;">Medios de pago</h4>
+        <div class="footer-pagos">
+          <span class="pago-badge visa">VISA</span>
+          <span class="pago-badge mastercard">MC</span>
+          <span class="pago-badge amex">YAPE</span>
+          <span class="pago-badge efectivo">Efectivo</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <strong>PuraVida Farmacia</strong> · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+</body>
+</html>

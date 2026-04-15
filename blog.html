@@ -2,32 +2,36 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style_blog.css">
 </head>
 
-<body background="image\background.png" leftmargin="150" rightmargin="150" topmargin="40">
-
-<table width="100%">
-    <tr>
-
-    <td width="150">
-        <img src="image/PURAVIDA1.png" width="100">
-    </td>
-    <td width="">
+<body>
+  
+    <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="image/PURAVIDA1.png" alt="PuraVida Logo">
+      </a>
+      <div class="search-bar">
         <input type="text" placeholder="Buscar un producto...">
         <button>Buscar</button>
-    </td>
-        <td>
-            <td align="center" width="60"><a href="index.html">INICIO</a></td>
-            <td align="center" width="60"><a href="blog.html">BLOG</a></td>
-            <td align="center" width="110"><a href="detalle_producto.html">PRODUCTOS</a></td>
-            <td align="center" width="110"><a href="#">NOSOTROS</a></td>
-            <td align="center" width="110"><a href="#">MIS PEDIDOS</a></td>
-            <td align="center" width="110"><a href="Registro.html">MI CUENTA</a></td>
-        </td>
-    </tr>
+      </div>
+    </div>
+  </header>
 
-</table>
-    
+    <!-- NAVEGACIÓN -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="activo">Inicio</a>
+      <a href="detalle_producto.html">Productos</a>
+      <a href="blog.html">Blog</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="pedidos.html">Mis Pedidos</a>
+      <a href="mi_cuenta.html">Mi Cuenta</a>
+    </div>
+  </nav>
+<section class="blog">
 <h1>Blog Salud</h1>
 
 <h2>5 Hábitos Clave para Proteger tu Corazón</h2>
@@ -100,6 +104,11 @@
 <br>
 <br>
 
+</section>  
 
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <strong>PuraVida Farmacia</strong> · Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>

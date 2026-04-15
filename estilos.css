@@ -1,13 +1,49 @@
-/**.banner_micuenta {
-    grid-area: imageBlock;
-    height: 600px;
-    position: relative;
-}**/
+/*Inicia Carusel de mi cuenta*/
+.carousel {
+  width: 100%;
+  max-width: 900px; /* controla el ancho */
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+/* Botones para el carusel*/
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #00000030;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/*Finaliza Carusel de mi cuenta*/
+
 
 .contenedor {
   display: flex;
   align-items: center;
-
+  gap: 20px;
 }
 
 .imagen img {
@@ -22,7 +58,7 @@
 
 .formulario input,
 .formulario select{
-    width: 100%;        
+  width: 100%;        
   padding: 10px;      
   font-size: 20px;    
   border-radius: 8px; 
@@ -39,4 +75,458 @@
   color: white;
   font-size: 16px;
   cursor: pointer;
+}
+
+/* ===========================
+   PURAVIDA FARMACIA - styles.css
+   =========================== */
+
+/* ── VARIABLES GLOBALES ── */
+:root {
+  --verde: #2d6a4f;
+  --verde-claro: #52b788;
+  --verde-suave: #d8f3dc;
+  --acento: #f4a261;
+  --texto: #1b1b1b;
+  --gris: #f7f7f5;
+  --blanco: #ffffff;
+  --borde: #e0e0d8;
+  --sombra: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ── RESET ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--gris);
+  color: var(--texto);
+}
+
+/* ══════════════════════════
+   HEADER
+══════════════════════════ */
+header {
+  background-color: var(--blanco);
+  border-bottom: 2px solid var(--verde-suave);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--sombra);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo img {
+  width: 90px;
+  display: block;
+}
+
+/* ── Buscador ── */
+.search-bar {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1.5px solid var(--borde);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: var(--verde-claro);
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: var(--verde);
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-bar button:hover {
+  background-color: var(--verde-claro);
+}
+
+/* ══════════════════════════
+   NAVEGACIÓN
+══════════════════════════ */
+nav {
+  background-color: var(--verde);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+}
+
+nav a {
+  display: block;
+  color: var(--blanco);
+  text-decoration: none;
+  padding: 13px 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: var(--acento);
+  transition: width 0.25s;
+}
+
+nav a:hover::after,
+nav a.activo::after {
+  width: 70%;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ══════════════════════════
+   BANNER PRINCIPAL
+══════════════════════════ */
+.banner-principal {
+  max-width: 1200px;
+  margin: 28px;
+  padding: 0 24px;
+}
+
+.banner-principal a img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s;
+}
+
+.banner-principal a img:hover {
+  transform: scale(1.01);
+}
+
+/* ══════════════════════════
+   BANNER DOBLE
+══════════════════════════ */
+.banner-doble {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.banner-doble a {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.banner-doble a img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.banner-doble a:hover img {
+  transform: scale(1.03);
+}
+
+/* ══════════════════════════
+   CINTA DESLIZANTE
+══════════════════════════ */
+.cinta-wrapper {
+  background-color: var(--verde-suave);
+  overflow: hidden;
+  padding: 10px 0;
+  margin: 20px 0;
+  border-top: 1px solid var(--borde);
+  border-bottom: 1px solid var(--borde);
+}
+
+.cinta-track {
+  display: flex;
+  animation: deslizar 18s linear infinite;
+  width: max-content;
+}
+
+.cinta-track a img {
+  height: 60px;
+  margin-right: 24px;
+}
+
+@keyframes deslizar {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ══════════════════════════
+   SECCIÓN PRODUCTOS
+══════════════════════════ */
+.productos-section {
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  padding: 0 24px;
+}
+
+.section-titulo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--verde);
+  text-align: center;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.section-titulo::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--acento);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* ── Tarjeta de Producto ── */
+.producto-card {
+  background: var(--blanco);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.producto-card .img-wrapper {
+  background-color: var(--gris);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 180px;
+}
+
+.producto-card img {
+  max-height: 140px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.producto-card .info {
+  padding: 14px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.producto-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: var(--texto);
+}
+
+.producto-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.producto-card ul li {
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.producto-card ul li::before {
+  content: '· ';
+  color: var(--verde-claro);
+  font-weight: bold;
+}
+
+.producto-card .precio {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--verde);
+  margin-top: 4px;
+}
+
+.producto-card .btn-ver {
+  display: block;
+  margin: 10px 16px 16px;
+  padding: 10px;
+  background-color: var(--verde);
+  color: var(--blanco);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: background 0.2s;
+}
+
+.producto-card .btn-ver:hover {
+  background-color: var(--acento);
+}
+
+/* ══════════════════════════
+   FOOTER
+══════════════════════════ */
+footer {
+  background-color: var(--verde);
+  color: var(--blanco);
+  text-align: center;
+  padding: 24px;
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--verde-suave);
+  text-decoration: none;
+}
+
+.beneficios {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.titulo-beneficios {
+  max-width: 1200px;
+  margin: 40px auto 20px;
+  padding: 0 24px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #2d6a4f;
+}
+
+.beneficio {
+  flex: 1;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.beneficio h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #2d6a4f;
+}
+
+.beneficio p {
+  font-size: 14px;
+  color: #555;
+}
+
+.pedidos-contacto {
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.pedidos-contacto h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.mensaje-pedidos {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.pedidos-contacto input,
+.pedidos-contacto textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.pedidos-contacto textarea {
+  height: 80px;
+  resize: none;
+}
+
+.pedidos-contacto button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3aa76d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.imagen_pedidos {
+  max-width: 800px;
+  margin: 28px auto 0;
+  padding: 0 24px;
 }
